@@ -28,6 +28,10 @@ class SampleTest < Test::Unit::TestCase
     puts @element.text
 
 
+    # make some changes in a code
+    # test cases
+    # Code changes
+
     sleep 5
 
   end
