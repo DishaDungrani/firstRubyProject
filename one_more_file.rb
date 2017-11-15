@@ -1,4 +1,5 @@
 class OneMoreFile
 
-  puts 'My machine  got stolen and I was robbed and since I didnt commit my code to git, I lost 5000 lines'
+  puts ' I Commited my code to git and in the event the machine is lost or stolen I am safe'
 end
+
