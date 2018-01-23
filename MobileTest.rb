@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'appium_lib'
-
+require 'selenium-webdriver'
+require 'test/unit'
+require_relative 'page_object.rb'
 #
 #gem install selenium-webdriver
 #sudo gem install selenium-webdriver
@@ -8,25 +10,50 @@ require 'appium_lib'
 #sudo gem install rails
 
 #gem install appium_lib
-#Saraths-MBP:bin root# sudo gem install appium_lib -n /usr/local/bin/
-#
-#
-#
+
+class MobileTest < Test::Unit::TestCase
 
 
-class one_more_file
+  def testPage
 
-  desired_caps = {
-      caps:  {
-          platformName:  'Android',
-          platformVersion: '5.1',
-          deviceName:    'Nexus_5_API_22_x86',
-          browserName:   'Browser',
-      }
-  }
-  @appium_driver = Appium::Driver.new(desired_caps)
-  @selenium_driver = @appium_driver.start_driver
-  @selenium_driver.get("http://www.google.com/")
-  @selenium_driver.get("http://www.google.com/")
+
+    pageobj=PageObject.new()
+    sleep 5
+
+    @element = pageobj.SignIn()
+
+    pageobj.getUserNameField().send_keys('mobile0325')
+    sleep 2
+    pageobj.getPasswordField().send_keys('quicken123')
+     sleep 2
+    pageobj.clickUsername().click
+     sleep 2
+    pageobj.SignIn().click
+    sleep 2
+
+
+
+    assert_equal(true, @element.displayed?)#,failure_message=TestFailed)
+
+
+    #@element = wait.until { @selenium_driver.find_element(:id => "com.quickenloans.myql.engbeta:id/rememberEmailSwitch") }
+   # @element.click
+    sleep 10
+
+   # @element = wait.until { @selenium_driver.find_element(:id => "com.quickenloans.myql.engbeta:id/signInButtonWithUsername") }
+   # @element.click
+    #pageobj.getLoginButton().click()
+    sleep 10
+
+
+#puts @element.text
+
+
+# make some changes in a code
+# test cases
+# Code changes
+
+    sleep 5
+    end
 
 end
