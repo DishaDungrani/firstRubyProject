@@ -2,7 +2,7 @@ require 'rubygems'
 require 'appium_lib'
 require 'selenium-webdriver'
 require 'test/unit'
-
+#dumy text
 
 class PageObject
 
