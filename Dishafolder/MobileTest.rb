@@ -55,5 +55,6 @@ class MobileTest < Test::Unit::TestCase
 
     sleep 5
     end
-
+def testing_push
+    puts "Hello world"
 end
